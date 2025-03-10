@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+
+<HBox spacing="20.0" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.first_try_of_fx.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <!-- Pacient Section (Smaller) -->
+    <VBox alignment="CENTER" spacing="10" VBox.vgrow="ALWAYS" >
+        <TableView fx:id="tablePacienti" VBox.vgrow="ALWAYS"/>
+        <ListView fx:id="listPacienti" VBox.vgrow="ALWAYS"/>
+
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <Label text="ID"/>
+                <TextField fx:id="textFieldId"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Name"/>
+                <TextField fx:id="textFieldName"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Surname"/>
+                <TextField fx:id="textFieldSurname"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Age"/>
+                <TextField fx:id="textFieldAge"/>
+            </VBox>
+        </HBox>
+
+        <!-- Buttons properly aligned below input fields -->
+        <HBox spacing="10">
+            <Button fx:id="buttonAdd" onAction="#onAddButtonClick" text="Adauga"/>
+            <Button fx:id="buttonDelete" onAction="#onDeleteButtonClick" text="Sterge"/>
+            <Button fx:id="buttonUpdatePacient" onAction="#updatePacient" text="Update Pacient"/>
+        </HBox>
+    </VBox>
+
+    <!-- Programare Section (Larger) -->
+    <VBox alignment="CENTER" spacing="10" VBox.vgrow="ALWAYS">
+        <TableView fx:id="tableProgramari" VBox.vgrow="ALWAYS"/>
+        <ListView fx:id="listProgramari" VBox.vgrow="ALWAYS"/>
+
+        <VBox spacing="10.0">
+            <HBox spacing="10.0">
+                <VBox>
+                    <Label text="Programare ID" />
+                    <TextField fx:id="textFieldProgramareId" />
+                </VBox>
+                <VBox>
+                    <Label text="Pacient ID" />
+                    <TextField fx:id="textFieldPacientId" />
+                </VBox>
+            </HBox>
+            <HBox spacing="10.0">
+                <VBox>
+                    <Label text="Data" />
+                    <TextField fx:id="textFieldData" />
+                </VBox>
+                <VBox>
+                    <Label text="Scop" />
+                    <TextField fx:id="textFieldScop" />
+                </VBox>
+            </HBox>
+
+            <HBox spacing="10">
+                <Button text="Adauga Programare" onAction="#onAddProgramareButtonClick"/>
+                <Button fx:id="buttonDeleteProgramare" onAction="#onDeleteButtonClickProgramare" text="Sterge"/>
+            </HBox>
+        </VBox>
+
+        <HBox spacing="20.0">
+            <VBox spacing="10.0">
+                <Button text="Număr Programări per Pacient" onAction="#handleNumarProgramariPerPacient"/>
+                <Button text="Număr Programări per Lună" onAction="#handleNumarProgramariPerLuna"/>
+                <Button text="Zile de la Ultima Programare" onAction="#handleZileDeLaUltimaProgramare"/>
+                <Button text="Cele mai Aglomerate Luni" onAction="#handleCeleMaiAglomerateLuni"/>
+            </VBox>
+
+            <TextArea fx:id="textAreaResults" VBox.vgrow="ALWAYS" editable="false" wrapText="true"/>
+        </HBox>
+    </VBox>
+</HBox>

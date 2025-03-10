@@ -1,0 +1,91 @@
+/* Set the entire app background */
+.root {
+    -fx-background-color: #b3e6ff;  /* Light gray */
+}
+
+.button {
+    -fx-background-color: #64b5f6; /* Soft blue */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Hover effect */
+.button:hover {
+    -fx-background-color: #42a5f5;
+}
+
+/* Button when pressed */
+.button:pressed {
+    -fx-background-color: #729fcf; /* Even darker blue */
+}
+
+/* Style for text fields */
+.text-field {
+    -fx-border-color: #3399ff;
+}
+
+/* Change the table background */
+.table-view {
+    -fx-background-color: #99ddff;
+    -fx-border-color: #00aaff;
+    -fx-border-radius: 10px; /* Rounded corners */
+    -fx-background-radius: 10px;
+}
+
+/* Style the table headers */
+.table-view .column-header-background {
+    -fx-background-color: #0080ff; /* Soft blue */
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+/* Change row selection color */
+.table-row-cell:selected {
+    -fx-background-color: #90caf9; /* Light blue */
+}
+
+/* Change list background */
+.list-view {
+    -fx-background-color: #99ddff;
+    -fx-border-color: #00aaff;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.list-cell {
+    -fx-background-color: white;
+    -fx-border-radius: 5px;
+}
+
+/* Change selected item color */
+.list-cell:selected {
+    -fx-background-color: #0080ff; /* Soft blue */
+    -fx-border-radius: 5px;
+}
+
+.table-view, .list-view {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+}
+
+/* Ensure text is fully visible */
+.table-cell {
+    /* No padding applied here */
+}
+
+/* Fix text in table cells */
+.table-cell {
+    -fx-alignment: CENTER-LEFT; /* Align text inside cells */
+}
+
+/* Ensure text is visible in table headers */
+.table-column {
+    /* No modifications to text styling */
+}
