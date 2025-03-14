@@ -232,12 +232,12 @@ public class HelloController {
             String pacientData = textFieldPacientId.getText().trim(); // Stringul cu datele pacientului
             String scop = textFieldScop.getText().trim();
 
-            // Parsăm data și ora
+            // Parsam data și ora
             String dateText = textFieldData.getText().trim();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
             LocalDateTime dataProgramare = LocalDateTime.parse(dateText, formatter);
 
-            // Prelucrăm stringul pacientului
+            // Prelucram stringul pacientului
             String[] pacientParts = pacientData.split(";");
             if (pacientParts.length != 4) {
                 throw new IllegalArgumentException("Format invalid pentru pacient! Trebuie să fie:id;nume;prenume;varsta");
@@ -250,7 +250,7 @@ public class HelloController {
 
             Programare programare = new Programare(programareId, pacient, dataProgramare, scop);
 
-            // Adăugăm în repository și lista locală
+            // Adaugam in repository si lista locala
             repositoryProgramari.add(programare);
             dataProgramari.add(programare);
 
@@ -301,18 +301,6 @@ public class HelloController {
     }
 
 
-/*
-    public void handleNumarProgramariPerPacient(ActionEvent actionEvent) {
-        Map<Pacient, Long> statistica = programareService.numarProgramariPerPacient(new ArrayList<>(dataProgramari));
-        StringBuilder rezultat = new StringBuilder("Număr programări per pacient:\n");
-        statistica.forEach((pacient, numarProgramari) ->
-                rezultat.append(pacient.getNume()).append(" ").append(pacient.getPrenume())
-                        .append(": ").append(numarProgramari).append(" programări\n")
-        );
-        textAreaResults.setText(rezultat.toString());
-    }
-*/
-
     public void handleNumarProgramariPerLuna(ActionEvent actionEvent) {
         Map<Month, Long> statistica = programareService.numarProgramariPerLuna(new ArrayList<>(dataProgramari));
         StringBuilder rezultat = new StringBuilder("Număr programări per lună:\n");
@@ -322,27 +310,6 @@ public class HelloController {
         textAreaResults.setText(rezultat.toString());
     }
 
-
-/*
-    public void handleZileDeLaUltimaProgramare(ActionEvent actionEvent) {
-        Map<Pacient, Long> zile = programareService.zileDeLaUltimaProgramare(new ArrayList<>(dataProgramari));
-        StringBuilder rezultat = new StringBuilder("Zile de la ultima programare:\n");
-        zile.forEach((pacient, zileTrecute) ->
-                rezultat.append(pacient.getNume()).append(" ").append(pacient.getPrenume())
-                        .append(": ").append(zileTrecute).append(" zile\n")
-        );
-        textAreaResults.setText(rezultat.toString());
-    }
-
-    public void handleCeleMaiAglomerateLuni(ActionEvent actionEvent) {
-        List<Map.Entry<Month, Long>> luniAglomerate = programareService.celeMaiAglomerateLuni(new ArrayList<>(dataProgramari));
-        StringBuilder rezultat = new StringBuilder("Cele mai aglomerate luni:\n");
-        luniAglomerate.forEach(entry ->
-                rezultat.append(entry.getKey()).append(": ").append(entry.getValue()).append(" programări\n")
-        );
-        textAreaResults.setText(rezultat.toString());
-    }
-*/
 
     @FXML
     private TextArea textAreaResults;
@@ -373,12 +340,12 @@ public class HelloController {
             String pacientData = textFieldPacientId.getText().trim(); // Stringul cu datele pacientului
             String scop = textFieldScop.getText().trim();
 
-            // Parsăm data și ora
+            // Parsam data și ora
             String dateText = textFieldData.getText().trim();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
             LocalDateTime dataProgramare = LocalDateTime.parse(dateText, formatter);
 
-            // Prelucrăm stringul pacientului
+            // Prelucram stringul pacientului
             String[] pacientParts = pacientData.split(";");
             if (pacientParts.length != 4) {
                 throw new IllegalArgumentException("Format invalid pentru pacient! Trebuie să fie:id;nume;prenume;varsta");
@@ -391,7 +358,7 @@ public class HelloController {
 
             Programare programare = new Programare(programareId, pacient, dataProgramare, scop);
 
-            // Adăugăm în repository și lista locală
+            // Adaugam in repository si lista locala
             repositoryProgramari.removeProgramare(programareId);
             dataProgramari.remove(programare);
 
